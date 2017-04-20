@@ -148,6 +148,8 @@ def main(args):
     optional.add_option("--add-arch-template-var", dest="add_arch_template_vars",
             action="append", help="Set variable for architecture-specific image",
             default=[])
+    optional.add_option("--customfield", default=" ",
+            help="Custom field used in arch template", metavar="STRING")
 
     # add the option groups to the parser
     parser.add_option_group(required)
@@ -225,6 +227,7 @@ def main(args):
               workdir=tempdir, outputdir=outputdir, buildarch=opts.buildarch,
               volid=opts.volid, domacboot=opts.domacboot, doupgrade=opts.doupgrade,
               installpkgs=opts.installpkgs,
+              customfield=opts.customfield,
               add_templates=opts.add_templates,
               add_template_vars=parsed_add_template_vars,
               add_arch_templates=opts.add_arch_templates,

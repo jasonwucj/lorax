@@ -144,6 +144,7 @@ class Lorax(BaseLoraxClass):
             isfinal=False, workdir=None, outputdir=None, buildarch=None, volid=None,
             domacboot=False, doupgrade=True, remove_temp=False,
             installpkgs=None,
+            customfield=None,
             size=2,
             add_templates=None,
             add_template_vars=None,
@@ -303,6 +304,7 @@ class Lorax(BaseLoraxClass):
         logger.info("preparing to build output tree and boot images")
         treebuilder = TreeBuilder(product=self.product, arch=self.arch,
                                   inroot=installroot, outroot=self.outputdir,
+                                  customfield=customfield,
                                   runtime=runtime, isolabel=isolabel,
                                   domacboot=domacboot, doupgrade=doupgrade,
                                   templatedir=templatedir,
