@@ -103,6 +103,6 @@ runcmd mkisofs -o ${outroot}/images/boot.iso \
        ${BOOTDIR}=${outroot}/${BOOTDIR} \
        ${KERNELDIR}=${outroot}/${KERNELDIR} \
        ${LIVEDIR}=${outroot}/${LIVEDIR} \
-       ${efigraft} ${imggraft}
+       ${efigraft} ${imggraft} ${customfield}
 runcmd isohybrid ${efihybrid} ${outroot}/images/boot.iso
 treeinfo images-${basearch} boot.iso images/boot.iso
